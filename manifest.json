@@ -1,0 +1,25 @@
+{
+    "name": "ImageRCO",
+    "description": "Shows some of the image ... ?",
+    "version": "0.1.0",
+    "icons": {
+        "16": "src/client/img/icon.png",
+        "48": "src/client/img/icon.png",
+        "128": "src/client/img/icon.png"
+    },
+    "permissions": [
+        "storage",
+        "contextMenus",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "background": {
+        "scripts": [
+            "src/vendor/jquery/jquery.min.js",
+            "src/vendor/waterfall.js",
+            "src/client/js/imagerco.js"
+        ]
+    },
+    "options_page": "src/options.html",
+    "manifest_version": 2
+}
