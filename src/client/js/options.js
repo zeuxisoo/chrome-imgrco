@@ -26,7 +26,9 @@
                 debug : debug,
                 apiKey: apiKey
             }, function() {
-                $('.message-block').text('Saved!').fadeOut(1200);
+                $('.message-block').text('Saved!').fadeIn('fast', function() {
+                    $(this).fadeOut(1200);
+                });
             });
         });
     });
