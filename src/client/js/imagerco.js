@@ -62,7 +62,11 @@ chrome.contextMenus.create({
                 console.log('==>');
                 console.log(response);
 
-                var code = response.split(':')[1].trim();
+                if (response.indexOf(':') !== -1) {
+                    var code = response.split(':')[1].trim();
+                }else{
+                    var code = response.trim();
+                }
 
                 window.prompt('Success! Your OCR code', code);
             }).fail(function(response) {
