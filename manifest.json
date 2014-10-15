@@ -16,7 +16,6 @@
     "background": {
         "scripts": [
             "src/vendor/jquery/jquery.min.js",
-            "src/vendor/waterfall.js",
             "src/client/js/imagerco.js"
         ]
     },
