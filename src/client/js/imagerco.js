@@ -17,15 +17,26 @@ var dataURItoBlob = function(dataURI) {
     return new Blob([ia], {type:mimeString});
 }
 
+var readOptions = function() {
+    var deferred = new $.Deferred();
+
+    chrome.storage.sync.get({
+        debug : true,
+        apiKey: ""
+    }, function (items) {
+        deferred.resolve(items);
+    });
+
+    return deferred.promise();
+}
+
 chrome.contextMenus.create({
     "title": "ImageRCO -----> --->",
     "contexts": ["image"],
     "onclick": function(info, tab) {
-        chrome.storage.sync.get({
-            debug : true,
-            apiKey: ''
-        }, function(options) {
-            console.log(options);
+        $.when(readOptions()).then(function(options) {
+            console.log("======> Start ==>");
+
             var debug      = options.debug;
             var apiKey     = options.apiKey;
 
